@@ -1,0 +1,5 @@
+-e .
+
+setuptools~=52.0.0.post20210125
+boto3~=1.17.46
+numpy~=1.20.3
