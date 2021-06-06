@@ -26,7 +26,7 @@ class VideoProcessingTestStack(cdk.Stack):
                                                queue_name=_queue_name,
                                                dead_letter_queue=_dead_letter_queue)
 
-        _s3_notification_filter: NotificationKeyFilter = NotificationKeyFilter(prefix="new", suffix=".txt")
+        _s3_notification_filter: NotificationKeyFilter = NotificationKeyFilter(prefix="asset/", suffix=".svo")
 
         _bucket_name = "com.leading-edge.video-test-bucket"
 

@@ -1,6 +1,6 @@
 from stereolabs/zed:3.4-runtime-cuda11.0-ubuntu18.04
 
-RUN apk add -U python3 py3-pip && pip3 install awsiotsdk==1.5.15 boto3==1.17.74
+RUN apt install python3 python3-pip && pip3 install awsiotsdk boto3
 
 COPY ./video_processing_test/image_test.py /image_test.py
 
