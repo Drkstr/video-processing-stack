@@ -57,7 +57,7 @@ class VideoProcessingTestStack(cdk.Stack):
                               min_capacity=1,
                               max_capacity=3)
 
-        _video_processing_service_name = "Video Processing Cluster"
+        _video_processing_service_name = "VideoProcessingService"
         self.videoProcessingService = QueueProcessingEc2Service(
             self,
             _video_processing_service_name,
