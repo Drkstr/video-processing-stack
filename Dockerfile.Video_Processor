@@ -1,5 +1,9 @@
 from stereolabs/zed:3.4-runtime-cuda11.0-ubuntu18.04
 
+RUN apt-get install nvidia-container-runtime
+
+RUN docker run -it --rm --gpus all ubuntu nvidia-smi
+
 RUN apt install python3 python3-pip && pip3 install opencv-python awsiotsdk boto3 numpy
 
 COPY ./video_processing_test/image_test.py /image_test.py
