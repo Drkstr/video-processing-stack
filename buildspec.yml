@@ -1,0 +1,8 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+       - npm i -g aws-cdk@latest
+       - python -m pip install -r requirements.txt
+       - cdk deploy --require-approval never
