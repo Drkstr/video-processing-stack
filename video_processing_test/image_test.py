@@ -2,25 +2,25 @@
 
 import os
 import csv
-# import pyzed.sl as sl
-# import cv2
+import pyzed.sl as sl
+import cv2
 import numpy as np
-# from datetime import datetime
-# import math as m
-# import matplotlib.pyplot as plt
-# import matplotlib
-# import time
-# from time import sleep
-# import pandas as pd
-# from scipy.interpolate import griddata, interp1d
-# from astropy.convolution import Gaussian2DKernel,convolve
-# import boto3
-# from botocore.exceptions import ClientError
-# from boto3.dynamodb.conditions import Key
-# from scipy import signal,ndimage
-# from itertools import accumulate
-# import logging
-# import pickle
+from datetime import datetime
+import math as m
+import matplotlib.pyplot as plt
+import matplotlib
+import time
+from time import sleep
+import pandas as pd
+from scipy.interpolate import griddata, interp1d
+from astropy.convolution import Gaussian2DKernel,convolve
+import boto3
+from botocore.exceptions import ClientError
+from boto3.dynamodb.conditions import Key
+from scipy import signal,ndimage
+from itertools import accumulate
+import logging
+import pickle
 
 
 def get_queue_details():
@@ -49,11 +49,10 @@ if __name__ == '__main__':
     try:
         print("NumPy version " + numpy.__version__)
         print("Open CV version " + cv2.__version__)
-        print("GPU available: "+GPUtil.getAvailable())
-        # print("ZED SDK version " + sl.__version__)
-        # print("Matploylib version "+matplotlib.__version__)
-        # print("Scipy version "+scipy.__version__)
-        # print("AstroPi version "+astropy.__version__)
+        print("ZED SDK version " + sl.__version__)
+        print("Matploylib version "+matplotlib.__version__)
+        print("Scipy version "+scipy.__version__)
+        print("AstroPi version "+astropy.__version__)
     except Exception as e:
         print(str(e))
         exit(200)
