@@ -4,7 +4,7 @@ CMD nvidia-smi
 
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y curl
 
-RUN curl -O https://cvsg-artifacts.s3-ap-southeast-2.amazonaws.com/ZED_SDK_Tegra_JP45_v3.5.0.run`
+RUN curl -O https://cvsg-artifacts.s3-ap-southeast-2.amazonaws.com/ZED_SDK_Tegra_JP45_v3.5.0.run
 
 RUN ./ZED_SDK_Tegra_JP45_v3.5.0.run
 
