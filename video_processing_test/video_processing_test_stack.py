@@ -38,36 +38,36 @@ class VideoProcessingTestStack(cdk.Stack):
             _s3_notification_filter
         )
 
-        _container_image: ContainerImage = ContainerImage.from_asset(
-            directory=".",
-            file='Dockerfile.Video_Processor',
-            exclude=["cdk.out"]
-        )
-
-        _scaling_steps = [{"upper": 0, "change": -1}, {"lower": 50, "change": +1}, {"lower": 100, "change": +2}]
-
-        _vpc: Vpc = Vpc(self, "video-processing-vpc", max_azs=3)
-
-        _cluster_name = "video-processing-cluster"
-
-        _cluster = Cluster(self, "video-processing-cluster", vpc=_vpc, cluster_name=_cluster_name)
-
-        _cluster.add_capacity("video-processing-autoscaling-capacity",
-                              instance_type=InstanceType("g4dn.xlarge"),
-                              min_capacity=1,
-                              max_capacity=3)
-
-        _video_processing_service_name = "VideoProcessingService"
-        self.videoProcessingService = QueueProcessingEc2Service(
-            self,
-            _video_processing_service_name,
-            service_name=_video_processing_service_name,
-            cluster=_cluster,
-            cpu=512,
-            scaling_steps=_scaling_steps,
-            memory_limit_mib=1024,
-            image=_container_image,
-            min_scaling_capacity=1,
-            max_scaling_capacity=5,
-            queue=_video_processing_queue
-        )
+        # _container_image: ContainerImage = ContainerImage.from_asset(
+        #     directory=".",
+        #     file='Dockerfile.Video_Processor',
+        #     exclude=["cdk.out"]
+        # )
+        #
+        # _scaling_steps = [{"upper": 0, "change": -1}, {"lower": 50, "change": +1}, {"lower": 100, "change": +2}]
+        #
+        # _vpc: Vpc = Vpc(self, "video-processing-vpc", max_azs=3)
+        #
+        # _cluster_name = "video-processing-cluster"
+        #
+        # _cluster = Cluster(self, "video-processing-cluster", vpc=_vpc, cluster_name=_cluster_name)
+        #
+        # _cluster.add_capacity("video-processing-autoscaling-capacity",
+        #                       instance_type=InstanceType("g4dn.xlarge"),
+        #                       min_capacity=1,
+        #                       max_capacity=3)
+        #
+        # _video_processing_service_name = "VideoProcessingService"
+        # self.videoProcessingService = QueueProcessingEc2Service(
+        #     self,
+        #     _video_processing_service_name,
+        #     service_name=_video_processing_service_name,
+        #     cluster=_cluster,
+        #     cpu=512,
+        #     scaling_steps=_scaling_steps,
+        #     memory_limit_mib=1024,
+        #     image=_container_image,
+        #     min_scaling_capacity=1,
+        #     max_scaling_capacity=5,
+        #     queue=_video_processing_queue
+        # )
